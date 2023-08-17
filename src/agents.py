@@ -4,6 +4,7 @@ class Agent:
     def __init__(self, id: int, pref: None | list = None) -> None:
         self.id = id
         self.pref = copy(pref) if pref else []
+        self.rank_dict = {a: i for i, a in enumerate(pref)}
 
     def set_pref(self, pref: list) -> None:
         self.pref = copy(pref)

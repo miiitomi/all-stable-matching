@@ -41,7 +41,7 @@ def deferred_acceptance(men_list: list[Man], women_list: list[Woman], man_propos
             if len(tmp_proposal[b]) > 0:
                 if matching[b] is not None:
                     a = matching[b]
-                    tmp_proposal[b] += [a]
+                    tmp_proposal[b].append(a)
                     matching[a] = None
                 a = b.best_agent(tmp_proposal[b])
                 matching[a] = b
