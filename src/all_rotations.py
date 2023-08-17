@@ -1,6 +1,6 @@
 from agents import Man, Woman
 from deferred_acceptance import deferred_acceptance
-from dfs import dfs
+from dfs import find_cycle
 
 def all_rotations(men_list: list[Man], women_list: list[Woman]):
     """Return all rotations.
@@ -16,7 +16,7 @@ def all_rotations(men_list: list[Man], women_list: list[Woman]):
             next_dict_m = m.best_agent(woman_prefer_m_list)
             if next_dict_m is not None:
                 G[m.id].append(matching[next_dict_m].id)
-        cycle = dfs(G)
+        cycle = find_cycle(G)
         rotation = []
         for men_idx in cycle:
             m = men_list[men_idx]
