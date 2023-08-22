@@ -2,8 +2,20 @@ from agents import Man, Woman
 from deferred_acceptance import deferred_acceptance
 from dfs import find_cycle
 
-def all_rotations(men_list: list[Man], women_list: list[Woman]):
+def all_rotations(men_list: list[Man], women_list: list[Woman]) -> list[list[tuple[Man, Woman]]]:
     """Return all rotations.
+
+    Parameters
+    ----------
+    men_list : list[Man]
+        A list of Man.
+    women_list : list[Woman]
+        A list of Woman.
+    
+    Returns
+    -------
+    list[list[tuple[Man, Woman]]]
+        A list of all rotations.
     """
     matching = deferred_acceptance(men_list, women_list, True)
     bottom = deferred_acceptance(men_list, women_list, False)

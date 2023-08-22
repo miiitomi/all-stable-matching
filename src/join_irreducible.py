@@ -2,8 +2,22 @@ from agents import Man, Woman
 from deferred_acceptance import deferred_acceptance
 from dfs import find_all_cycles
 
-def join_irreducible_matching(rotation: list[tuple[Man,Woman]], men_list: list[Man], women_list: list[Woman]):
+def join_irreducible_matching(rotation: list[tuple[Man,Woman]], men_list: list[Man], women_list: list[Woman]) -> dict:
     """Return the join-irreducible stable matching corresponding to given rotation.
+
+    Parameters
+    ----------
+    rotation : list[tuple[Man,Woman]]
+        A rotation.
+    men_list : list[Man]
+        A list of Man.
+    women_list : list[Woman]
+        A list of Woman.
+    
+    Returns
+    -------
+    dict
+        The join-irreducible stable matching corresponding to given rotation.
     """
     matching = deferred_acceptance(men_list, women_list, True)
 
