@@ -38,21 +38,21 @@ def join_irreducible_matching(rotation: list[tuple[Man,Woman]], men_list: list[M
         all_cycles = find_all_cycles(G)
 
         for cycle in all_cycles:
-            rotation = []
+            tmp_rotation = []
             for man_idx in cycle:
-                rotation.append((men_list[man_idx], matching[men_list[man_idx]]))
-            rotations.append(rotation)
+                tmp_rotation.append((men_list[man_idx], matching[men_list[man_idx]]))
+            rotations.append(tmp_rotation)
 
         if rotations == [given_rotation]:
             break
 
-        rotation = rotations[0]
-        if rotation == given_rotation:
-            rotation = rotations[1]
+        tmp_rotation = rotations[0]
+        if tmp_rotation == given_rotation:
+            tmp_rotation = rotations[1]
         
-        for i, pair in enumerate(rotation):
+        for i, pair in enumerate(tmp_rotation):
             m = pair[0]
-            matching[m] = rotation[(i+1)%len(rotation)][1]
+            matching[m] = tmp_rotation[(i+1)%len(tmp_rotation)][1]
             matching[matching[m]] = m
     
     return matching
