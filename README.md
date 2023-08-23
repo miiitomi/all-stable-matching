@@ -63,7 +63,7 @@ median_matching = median_stable_matching(men_list=m, women_list=w, stable_matchi
 See `notebooks/all_stable_matching.ipynb` for details.
 
 ## Reference
-"Online and Matching-Based Market Design" (edited by Federico Echenique,  Nicole Immorlica, Vijay V. Vazirani, 2023, Cambridge University Press), C haprer 1.
+"Online and Matching-Based Market Design" (edited by Federico Echenique,  Nicole Immorlica, Vijay V. Vazirani, 2023, Cambridge University Press), Chaprer 1.
 
 ## License
 MIT License. See `LICENSE` for details.
